@@ -8,7 +8,7 @@
 .home .tagline{margin-bottom:16px;animation:revealUp .7s .1s cubic-bezier(.2,.8,.2,1) both}
 .home h2{font-size:clamp(60px,8.7vh,94px);line-height:.99;letter-spacing:-.058em;margin:0 0 clamp(28px,6vh,59px);max-width:100%;animation:revealUp .8s .19s cubic-bezier(.2,.8,.2,1) both}
 .home-copy{width:100%;padding-bottom:clamp(12px,2.5vh,28px);animation:none}
-.main-cta{position:relative;isolation:isolate;overflow:hidden;animation:revealUp .9s .32s cubic-bezier(.2,.8,.2,1) both;transition:transform .36s cubic-bezier(.18,.9,.2,1),box-shadow .36s ease;background:#fbf4ef}
+.main-cta{position:relative;isolation:isolate;overflow:hidden;animation:ctaReveal .75s .32s cubic-bezier(.2,.8,.2,1) both;transition:transform .36s cubic-bezier(.18,.9,.2,1),box-shadow .36s ease;background:#fbf4ef}
 .main-cta::before{content:'';position:absolute;inset:-55% -50%;z-index:-1;pointer-events:none;background:linear-gradient(108deg,transparent 39%,rgba(255,255,255,.84) 49%,transparent 60%);transform:translateX(-140%);animation:glint 9s 1.8s ease-in-out infinite}
 .main-cta:active{transform:scale(.975);box-shadow:0 7px 20px rgba(48,25,20,.18)}
 .cta-icon{transition:transform .34s cubic-bezier(.18,.89,.32,1.3),background .25s ease}
@@ -42,6 +42,7 @@
 .button-outline:hover{background:transparent}
 @keyframes revealDown{from{opacity:0;transform:translateY(-12px)}to{opacity:1;transform:translateY(0)}}
 @keyframes revealUp{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:translateY(0)}}
+@keyframes ctaReveal{from{opacity:0;transform:scale(.985)}to{opacity:1;transform:scale(1)}}
 @keyframes lightFloat{from{transform:translate(-13px,-15px) scale(.94);opacity:.18}to{transform:translate(13px,15px) scale(1.06);opacity:.34}}
 @keyframes glint{0%,67%,100%{transform:translateX(-140%)}82%{transform:translateX(140%)}}
 @keyframes dotIn{from{transform:scale(.25);opacity:0}to{transform:scale(1);opacity:1}}
