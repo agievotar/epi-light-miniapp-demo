@@ -17,6 +17,45 @@
 @media(max-height:900px){.shell{padding-top:48px;padding-bottom:21px}.page-title{margin-top:23px;font-size:37px}.date-row-head{margin:19px 0 10px}.date-card{min-height:81px}.dates{padding-bottom:7px}.separator{margin:17px 0}.time-grid{margin-top:13px;gap:8px}.time-cell{min-height:48px}.calendar-bottom{padding-top:11px}.booking-summary{padding:10px 13px;margin-bottom:9px}.confirm-button{min-height:55px}.disclaimer{margin-top:8px}}
 @media(max-height:700px){.home{padding-top:52px;padding-bottom:25px}.home h2{font-size:42px}.home .subcopy{margin-bottom:18px}.home-foot{margin-top:20px}.shell{padding-top:41px;padding-bottom:19px}.page-title{margin-top:15px;font-size:32px}.date-row-head{margin-top:18px}.date-card{min-height:77px}.separator{margin:13px 0}.time-cell{min-height:43px}.calendar-bottom{padding-top:12px}.booking-summary{padding:8px 12px}.confirm-button{min-height:50px}.success-screen{padding-top:49px}.success-title{margin-top:20px}.check-outer{width:113px;height:113px;flex-basis:113px}.success-actions{padding-top:18px}}
 @media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}.check-outer svg{stroke-dashoffset:0!important}}
+/* Telegram viewport: use the actual webview height; never impose the old 560px mock-phone floor. */
+@media(max-width:730px){
+ html,body,.layout,.phone-wrap{height:100%;min-height:0;overflow:hidden}
+ .layout{height:100dvh;min-height:0}
+ .phone{height:100%;min-height:0;max-height:none}
+ .screen{overscroll-behavior:contain}
+ .home{padding:calc(14px + env(safe-area-inset-top,0px)) 24px calc(15px + env(safe-area-inset-bottom,0px))}
+ .home .home-copy{margin-top:auto}
+ .home h2{font-size:clamp(33px,5.8dvh,50px);margin-bottom:clamp(10px,2dvh,20px)}
+ .home .subcopy{margin-bottom:clamp(13px,2.7dvh,26px)}
+ .home-foot{margin-top:clamp(12px,2.7dvh,25px);padding-top:12px}
+ .main-cta{min-height:56px}
+ .shell{height:100%;min-height:0;padding:calc(8px + env(safe-area-inset-top,0px)) 20px calc(12px + env(safe-area-inset-bottom,0px))}
+ .page-title{margin-top:clamp(9px,2dvh,19px);font-size:clamp(28px,4.8dvh,38px)}
+ .date-row-head{margin:clamp(12px,2.5dvh,22px) 0 8px}
+ .dates{margin:0 -20px;padding:3px 20px 7px}
+ .date-card{min-height:clamp(60px,10.5dvh,81px)}
+ .separator{margin:clamp(7px,1.5dvh,15px) 0}
+ .time-grid{margin-top:9px;gap:7px}
+ .time-cell{min-height:clamp(37px,6.2dvh,49px)}
+ .calendar-bottom{padding-top:8px}
+ .booking-summary{padding:8px 11px;margin-bottom:7px}
+ .confirm-button{min-height:49px}
+ .disclaimer{margin-top:6px}
+ .success-screen{padding:calc(14px + env(safe-area-inset-top,0px)) 24px calc(14px + env(safe-area-inset-bottom,0px))}
+ .check-outer{width:clamp(85px,18dvh,135px);height:clamp(85px,18dvh,135px);flex-basis:clamp(85px,18dvh,135px)}
+ .success-title{font-size:clamp(32px,5.4dvh,43px);margin:clamp(12px,2.5dvh,26px) 0 8px}
+ .success-copy{margin-top:12px}
+ .success-actions{padding-top:clamp(9px,2dvh,22px)}
+ .button-outline{min-height:46px}
+ .success-note{margin-top:10px}
+}
+@media(max-width:730px) and (max-height:620px){
+ .home{padding-left:20px;padding-right:20px}.brand{font-size:23px}.home h2{font-size:clamp(28px,5.4dvh,35px)}
+ .tagline{margin-bottom:9px}.home-foot{font-size:9px}.home .subcopy{font-size:11px;line-height:1.5}
+ .page-desc{line-height:1.4}.date-card{min-height:55px}.time-cell{min-height:33px}
+ .booking-summary{padding:5px 9px}.booking-summary small{font-size:9px}.disclaimer{font-size:9px}
+ .success-screen .check-outer{width:80px;height:80px;flex-basis:80px}.success-copy{margin-top:7px}
+}
 </style>
 </head>
 <body>
