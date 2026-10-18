@@ -57,17 +57,14 @@
  .success-screen .check-outer{width:80px;height:80px;flex-basis:80px}.success-copy{margin-top:7px}
 }
 </style>
+<link rel="stylesheet" href="polish.css?v=1">
 </head>
 <body>
 <div class="layout">
   <aside class="editorial" aria-label="Информация о прототипе">
-    <div class="overline">EPI LIGHT / INTERACTIVE CONCEPT / V0.1</div>
-    <h1>Запись,<br>в которую<br><em>приятно</em><br>возвращаться.</h1>
-    <p>Небольшой интерактивный прототип для студии EPI LIGHT. Один акцент — лёгкость: от знакомства до выбранного времени всего несколько касаний.</p>
-    <hr>
-    <div class="hint"><span class="number">01</span><span>Нажмите «Записаться» и выберите день.</span></div>
-    <div class="hint"><span class="number">02</span><span>Выберите свободный час и подтвердите.</span></div>
-    <div class="hint"><span class="number">03</span><span>Сохраните запись в личный календарь.</span></div>
+    <div class="overline">EPI LIGHT / BOOKING CONCEPT</div>
+    <h1>Пара касаний.<br><em>И готово.</em></h1>
+    <p>Простой способ выбрать время у Светы. Никаких каталогов и лишних шагов.</p>
     <a class="link" href="https://t.me/epi_light_bot" target="_blank" rel="noopener noreferrer">Telegram · @epi_light_bot <span aria-hidden="true">↗</span></a>
     <div class="caption">Демо-режим. Без подключения к боту, реальному расписанию или уведомлениям. Тестовые бронирования сохраняются только в этом браузере.</div>
   </aside>
@@ -75,35 +72,34 @@
     <div class="phone" id="phone">
       
       <section class="screen home active" id="home" aria-label="Приветствие">
-        <div class="portrait" aria-hidden="true"></div><div class="veil" aria-hidden="true"></div><div class="ornaments"><div class="orb"></div><div class="orb"></div></div>
+        <div class="portrait" aria-hidden="true"></div><div class="veil" aria-hidden="true"></div><div class="luminous" aria-hidden="true"></div><div class="ornaments"><div class="orb"></div><div class="orb"></div></div>
         <header class="home-top"><div><div class="brand">EPI LIGHT</div><div class="brand-sub">SUGARING &amp; WAXING</div></div><div class="pill">DEMO ✦</div></header>
         <div class="home-copy">
-          <div class="tagline">BEAUTY &amp; CARE · DÜSSELDORF</div>
-          <h2>Гладкая<br>кожа.<br>Уверенность<br>в себе.</h2>
-          <p class="subcopy">Профессиональная депиляция в уютной атмосфере. Ваше время для себя — в несколько касаний.</p>
-          <button class="main-cta" id="start"><span>Записаться</span><span class="cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></button>
+          <div class="tagline">К СВЕТЕ · DÜSSELDORF</div>
+          <h2>Найдём<br>время?</h2>
+          
+          <button class="main-cta" id="start"><span>Выбрать время</span><span class="cta-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16m-7-7 7 7-7 7"/></svg></span></button>
           </div>
       </section>
       <section class="screen" id="calendar" aria-label="Выбор даты и времени">
         <div class="shell"><div class="toolbar"><button class="icon-button" id="back" aria-label="Назад"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"><path d="M19 12H5m7-7-7 7 7 7"/></svg></button><div class="small-logo">EPI LIGHT<small>SUGARING &amp; WAXING</small></div><span class="demo-marker">DEMO</span></div>
-          <h2 class="page-title">Выберите дату<br>и время</h2><p class="page-desc">Немного времени для себя.<br>Каждая запись — на 60 минут.</p>
-          <div class="date-row-head"><div class="field-label">Удобный день</div><div class="date-nav"><button class="nav-small" id="prevDates" aria-label="Предыдущие даты"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 5-7 7 7 7"/></svg></button><button class="nav-small" id="nextDates" aria-label="Следующие даты"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
+          <h2 class="page-title">Когда удобно?</h2><p class="session-meta">60 минут <span aria-hidden="true">·</span> Дюссельдорф</p>
+          <div class="date-row-head"><div class="field-label">Ближайшие даты</div><div class="date-nav"><button class="nav-small" id="prevDates" aria-label="Предыдущие даты"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m15 5-7 7 7 7"/></svg></button><button class="nav-small" id="nextDates" aria-label="Следующие даты"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m9 5 7 7-7 7"/></svg></button></div></div>
           <div class="dates" id="dateStrip" aria-label="Доступные даты"></div>
           <div class="separator"></div>
           <div class="day-line"><span class="day-full" id="chosenDate"></span><span class="muted-small" id="availability"></span></div>
           <div class="time-grid" id="timeGrid" aria-label="Свободное время"></div>
-          <div class="calendar-bottom"><div class="booking-summary"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 6v6l4 2" stroke-linecap="round"/></svg><div><strong id="summaryMain">Выберите удобное время</strong><small id="summarySub">Длительность — 1 час · Тестовое расписание</small></div></div>
-            <button class="confirm-button" id="book" disabled>Выберите время <span aria-hidden="true">→</span></button><p class="disclaimer">Тестовый режим · запись пока не отправляется мастеру</p></div>
+          <div class="calendar-bottom"><button class="confirm-button" id="book" disabled>Выберите время <span aria-hidden="true">→</span></button><p class="disclaimer">Демо · запись не отправляется</p></div>
         </div>
       </section>
       <section class="screen success-screen" id="success" aria-label="Подтверждение тестовой записи">
         <div class="swirl"></div><div class="swirl second"></div><span class="sparkle one">✧</span><span class="sparkle two">✧</span><span class="sparkle three">✦</span>
         <header class="success-logo">EPI LIGHT<small>SUGARING &amp; WAXING</small></header>
         <div class="check-outer"><svg viewBox="0 0 80 80" aria-hidden="true"><path d="M17 40 33 56 63 25"/></svg></div>
-        <h2 class="success-title">Вы записаны!</h2><p class="success-details" id="successDate"></p><div class="success-duration" id="successTime"></div><p class="success-copy">Пусть этот час будет только для вас. До встречи! ♡</p>
-        <div class="success-actions"><button class="confirm-button" id="addCalendar"><span>Добавить в календарь</span><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v5m10-5v5M3 10h18m-12 5 2 2 4-4"/></svg></button><button class="button-outline" id="newBooking">Записаться ещё раз</button><div class="success-note">Это тестовая запись. Уведомление Светлане<br>пока не отправляется.</div></div>
+        <h2 class="success-title">Готово.</h2><p class="success-details" id="successDate"></p><div class="success-duration" id="successTime"></div><p class="success-copy">Это пока демо, не настоящая запись.</p>
+        <div class="success-actions"><button class="confirm-button" id="addCalendar"><span>Добавить в календарь</span><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v5m10-5v5M3 10h18m-12 5 2 2 4-4"/></svg></button><button class="button-outline" id="newBooking">Ещё раз</button></div>
       </section>
-      <div class="modal-backdrop" id="calendarModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"><div class="sheet"><div class="grab"></div><h3 id="modalTitle">Добавить в календарь</h3><p>Сохраните тестовую запись у себя. Время указано по Дюссельдорфу.</p><a href="#" id="googleLink" target="_blank" rel="noopener noreferrer"><span>Google Calendar</span><span aria-hidden="true">↗</span></a><button class="sheet-option" id="icsDownload"><span>Apple Calendar / скачать .ics</span><span aria-hidden="true">↓</span></button><button class="close-sheet" id="closeCalendarModal">Закрыть</button></div></div>
+      <div class="modal-backdrop" id="calendarModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true"><div class="sheet"><div class="grab"></div><h3 id="modalTitle">Добавить в календарь</h3><p>Тестовая запись · время Дюссельдорфа.</p><a href="#" id="googleLink" target="_blank" rel="noopener noreferrer"><span>Google Calendar</span><span aria-hidden="true">↗</span></a><button class="sheet-option" id="icsDownload"><span>Apple Calendar / скачать .ics</span><span aria-hidden="true">↓</span></button><button class="close-sheet" id="closeCalendarModal">Закрыть</button></div></div>
     </div>
   </main>
 </div>
@@ -124,15 +120,15 @@ function initDates(){const base=makeDate(berlinDate());base.setUTCDate(base.getU
 function hours(k){if(makeDate(k).getUTCDay()===0)return[];const saturday=makeDate(k).getUTCDay()===6;return Array.from({length:saturday?6:9},(_,i)=>String(10+i).padStart(2,'0')+':00')}
 function disabled(k,h){const day=Number(k.slice(-2)),hr=parseInt(h,10);return reservations.includes(k+'|'+h)||((day*7+hr*3+parseInt(k.slice(5,7),10))%9===0)||((day+hr*5)%13===0)}
 function getFree(k){return hours(k).filter(h=>!disabled(k,h))}
-function haptic(){try{telegram&&telegram.HapticFeedback.impactOccurred('light')}catch(_){}}
-function show(target){if(step===target)return;const old=$(step);old.classList.remove('active');old.classList.add('leaving');setTimeout(()=>old.classList.remove('leaving'),500);$(target).classList.add('active');$(target).scrollTop=0;step=target;$('status').className='status '+(target==='home'?'light':'dark');if(target==='calendar')renderCalendar();haptic()}
+function haptic(kind='selection'){try{if(!telegram)return;if(kind==='success')telegram.HapticFeedback.notificationOccurred('success');else if(kind==='press')telegram.HapticFeedback.impactOccurred('light');else telegram.HapticFeedback.selectionChanged()}catch(_){}}
+function show(target){if(step===target)return;const old=$(step);old.classList.remove('active');old.classList.add('leaving');setTimeout(()=>old.classList.remove('leaving'),500);$(target).classList.add('active');$(target).scrollTop=0;step=target;if(target==='calendar')renderCalendar();haptic('press')}
 function renderDates(){const strip=$('dateStrip');strip.textContent='';dates.forEach(k=>{const dt=makeDate(k),off=dt.getUTCDay()===0,btn=document.createElement('button');btn.className='date-card'+(k===selectedDate?' selected':'');btn.disabled=off;btn.dataset.key=k;btn.setAttribute('aria-label',dateFmt.format(dt)+(off?', выходной':''));btn.setAttribute('aria-pressed',String(k===selectedDate));btn.innerHTML='<span class="weekday">'+wkFmt.format(dt).replace('.','')+'</span><span class="day-number">'+dt.getUTCDate()+'</span><span class="month">'+monFmt.format(dt).replace('.','')+'</span>';btn.addEventListener('click',()=>{selectedDate=k;selectedTime='';renderCalendar(true);haptic()});strip.append(btn)});
 }
-function renderCalendar(scroll=false){renderDates();const d=makeDate(selectedDate);$('chosenDate').textContent=dateFmt.format(d).replace(/^./,m=>m.toUpperCase());const grid=$('timeGrid');grid.textContent='';const slots=hours(selectedDate),free=getFree(selectedDate);$('availability').textContent=free.length+' свободных';if(!free.length){const p=document.createElement('p');p.className='time-empty';p.textContent='На этот день свободных часов нет. Попробуйте соседнюю дату.';grid.append(p)}else{slots.forEach(h=>{const btn=document.createElement('button');btn.className='time-cell'+(selectedTime===h?' chosen':'');btn.disabled=disabled(selectedDate,h);btn.textContent=h;btn.setAttribute('aria-label',h+(btn.disabled?', занято':''));btn.setAttribute('aria-pressed',String(selectedTime===h));btn.addEventListener('click',()=>{selectedTime=h;updateSelection();haptic()});grid.append(btn)})}updateSelection();if(scroll){document.querySelector('.date-card.selected')?.scrollIntoView({behavior:'smooth',block:'nearest',inline:'center'})}}
-function updateSelection(){document.querySelectorAll('.time-cell').forEach(el=>{const picked=el.textContent===selectedTime;el.classList.toggle('chosen',picked);el.setAttribute('aria-pressed',String(picked))});$('book').disabled=!selectedTime;$('book').innerHTML=selectedTime?'Записаться на '+selectedTime+' &nbsp;→':'Выберите время &nbsp;→';$('summaryMain').textContent=selectedTime?dateFmt.format(makeDate(selectedDate))+' · '+selectedTime:'Выберите удобное время';$('summarySub').textContent=selectedTime?'60 минут · по времени Дюссельдорфа':'Длительность — 1 час · Тестовое расписание'}
+function renderCalendar(scroll=false){renderDates();const d=makeDate(selectedDate);$('chosenDate').textContent=dateFmt.format(d).replace(/^./,m=>m.toUpperCase());if(scroll&&!window.matchMedia('(prefers-reduced-motion: reduce)').matches){$('chosenDate').animate([{opacity:.35,transform:'translateY(5px)'},{opacity:1,transform:'translateY(0)'}],{duration:300,easing:'ease-out'});}const grid=$('timeGrid');grid.textContent='';const slots=hours(selectedDate),free=getFree(selectedDate);$('availability').textContent=free.length+' свободных';if(!free.length){const p=document.createElement('p');p.className='time-empty';p.textContent='На этот день свободных часов нет. Попробуйте соседнюю дату.';grid.append(p)}else{slots.forEach(h=>{const btn=document.createElement('button');btn.className='time-cell'+(selectedTime===h?' chosen':'');btn.disabled=disabled(selectedDate,h);btn.textContent=h;btn.setAttribute('aria-label',h+(btn.disabled?', занято':''));btn.setAttribute('aria-pressed',String(selectedTime===h));btn.style.setProperty('--index',slots.indexOf(h));btn.addEventListener('click',()=>{selectedTime=h;updateSelection();haptic()});grid.append(btn)})}updateSelection();if(scroll){const card=$('dateStrip').querySelector('.selected'),strip=$('dateStrip');if(card){const x=card.getBoundingClientRect().left-strip.getBoundingClientRect().left+strip.scrollLeft-(strip.clientWidth-card.clientWidth)/2;strip.scrollTo({left:x,behavior:'smooth'})}}}
+function updateSelection(){document.querySelectorAll('.time-cell').forEach(el=>{const picked=el.textContent===selectedTime;el.classList.toggle('chosen',picked);el.setAttribute('aria-pressed',String(picked))});$('book').disabled=!selectedTime;$('book').innerHTML=selectedTime?'Подтвердить · '+selectedTime+' <span aria-hidden="true">→</span>':'Выберите время <span aria-hidden="true">→</span>'}
 $('start').addEventListener('click',()=>show('calendar'));$('back').addEventListener('click',()=>show('home'));
 $('prevDates').addEventListener('click',()=>{$('dateStrip').scrollBy({left:-325,behavior:'smooth'})});$('nextDates').addEventListener('click',()=>{$('dateStrip').scrollBy({left:325,behavior:'smooth'})});
-$('book').addEventListener('click',()=>{if(!selectedTime||disabled(selectedDate,selectedTime))return;const k=selectedDate+'|'+selectedTime;reservations.push(k);save();bookedDate=selectedDate;bookedTime=selectedTime;$('successDate').textContent=dateFmt.format(makeDate(bookedDate)).replace(/^./,m=>m.toUpperCase());$('successTime').textContent=bookedTime+'–'+String(parseInt(bookedTime.slice(0,2),10)+1).padStart(2,'0')+':00 · 60 минут';selectedTime='';$('book').disabled=true;show('success')});
+$('book').addEventListener('click',()=>{if(!selectedTime||disabled(selectedDate,selectedTime))return;const k=selectedDate+'|'+selectedTime;reservations.push(k);save();bookedDate=selectedDate;bookedTime=selectedTime;$('successDate').textContent=dateFmt.format(makeDate(bookedDate)).replace(/^./,m=>m.toUpperCase());$('successTime').textContent=bookedTime+'–'+String(parseInt(bookedTime.slice(0,2),10)+1).padStart(2,'0')+':00 · 60 минут';selectedTime='';$('book').disabled=true;show('success');haptic('success')});
 $('newBooking').addEventListener('click',()=>{const next=dates.find(k=>getFree(k).length>0);selectedDate=next||dates[0];selectedTime='';show('home')});
 function utcForBerlin(date,hour){const [y,m,d]=date.split('-').map(Number),n=new Date(Date.UTC(y,m-1,d,12));const p=new Intl.DateTimeFormat('en-US',{timeZone:tz,timeZoneName:'shortOffset'}).formatToParts(n),name=p.find(x=>x.type==='timeZoneName')?.value||'GMT+1',mm=name.match(/GMT([+-])(\d{1,2})(?::(\d\d))?/),offset=mm?(mm[1]==='+'?1:-1)*(Number(mm[2])*60+Number(mm[3]||0)):60;return new Date(Date.UTC(y,m-1,d,hour,0)-offset*60000)}
 const stamp=dt=>dt.toISOString().replace(/[-:]/g,'').replace(/\.\d{3}/,'');const event=()=>{const hh=Number(bookedTime.slice(0,2)),start=utcForBerlin(bookedDate,hh),end=utcForBerlin(bookedDate,hh+1);return{start,end}};
